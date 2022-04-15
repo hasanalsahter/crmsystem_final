@@ -1,9 +1,9 @@
-
 import { initializeApp } from "firebase/app";
+import { getAuth } from "firebase/auth";
 
 
 const firebaseConfig = {
-  apiKey: Process.env.REACT_CRMSYSRWM_FIREBASE_KEY,
+  apiKey: "AIzaSyDEv3g7_DQExRyC-83Xba_Orrv-G4jtYLw",
   authDomain: "crmsystem-17c1e.firebaseapp.com",
   projectId: "crmsystem-17c1e",
   storageBucket: "crmsystem-17c1e.appspot.com",
@@ -14,3 +14,4 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
+export const auth = getAuth()
