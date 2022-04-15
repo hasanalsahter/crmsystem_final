@@ -6,7 +6,10 @@ export default function Home() {
   return (
     <div className="home">
         <Sidebar />
-      <div className="homeContiner">container</div>
+       
+      <div className="homeContiner">
+      <Navbar />
+      </div>
        
     </div>
   )
