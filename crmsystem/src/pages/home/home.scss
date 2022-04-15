@@ -1,4 +1,10 @@
 .home{
-    background-color: aqua;
-   
+   display: flex;
+   font-family: 'Nunito', sans-serif;
+
+
+   .homeContiner{
+       background-color:rgb(255, 255, 255);
+       flex: 6;
+   }
 }
