@@ -9,16 +9,18 @@ import {
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
 import List from "./pages/list/List";
-
+import {AuthContext} from "./components/context/AuthContext";
+import { useContext } from "react"
 function App() {
 
-  const currentUser = true;
 
+const {currentUser} = useContext(AuthContext)
+  
 const ReqireAuth = ({children}) =>{
 
   return currentUser ? (children) : <Navigate to="/Login"/>
-}
-
+};
+console.log(currentUser)
   return (
     <div className="App">
    <BrowserRouter>
