@@ -4,6 +4,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import {auth} from"../../firebease";
 import {useNavigate} from 'react-router-dom';
 import {AuthContext} from "../../components/context/AuthContext";
+import Logo from "../../components/imgs/Logo.png"
 
 export default function Login() {
   const [error , setError] = useState(false);
@@ -32,7 +33,13 @@ export default function Login() {
   };
   return (
 
+
     <div className="login">
+
+      <div className="logo">
+        <img src={Logo}  />
+      </div>
+
       <form onSubmit={Login_process}>
       <input type="email" placeholder="Email" onChange={e=>setEmail(e.target.value)}/>
       <input type="password" placeholder="Password"  onChange={e=>setPassword(e.target.value)}/>

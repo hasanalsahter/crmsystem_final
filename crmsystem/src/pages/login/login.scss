@@ -3,6 +3,18 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+
+    .logo{
+       width: 200px;
+       height: 200px;
+       display: flex; 
+    align-items: center;
+    justify-content: center;
+      
+      
+      
+    }
 
     form{
         display: flex;
@@ -14,6 +26,7 @@
         width: 200px;
         height: 30px;
         margin: 10px;
+        border-radius: 10px;
         }
 
         button{
@@ -25,6 +38,7 @@
             color: white;
             font-weight: bold;
             cursor: pointer;
+            border-radius: 10px;
         }
 
         span{
