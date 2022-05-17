@@ -4,6 +4,7 @@ import "./home.scss"
 import Widget from "../../components/widget/Widget"
 import Featured from "../../components/featuered/Featured"
 import Chart from "../../components/chart/Chart";
+import Table from "../../components/table/Table";
 
 
 export default function Home() {
@@ -25,10 +26,13 @@ export default function Home() {
           <Chart title="Last 6 Months (Revenue)" aspect={2 / 1} />
 
         </div>
-      </div>
-
-  
-       
+        <div className="listContainer">
+          <div className="listTitle">Latst Transactions</div>
+         <Table/>
+        </div>
+      </div>  
     </div>
-  )
-}
+  );
+};
+
+
