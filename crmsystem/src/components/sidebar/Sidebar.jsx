@@ -8,37 +8,43 @@ import NotificationsIcon from '@mui/icons-material/Notifications';
 import BadgeIcon from '@mui/icons-material/Badge';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
-
+import {Link} from "react-router-dom";
 
 function Sidebar() {
    
   return (
     <div className="sidebar">
         <div className="top">
-
+            <Link to="/" style={{textDecoration:"none"}}>
             <span className="logo">Forica</span>
-            
+            </Link>
             </div>
             
         <div className="center">
             <ul>
 
                 <p className="title">Main</p>
+                <Link to="/" style={{textDecoration:"none"}}>
                 <li>
+
                     <DashboardIcon className="Icon"/>
                     <span>Dashboard</span>
                 </li>
+                </Link>
                 <p className="title">LISTS</p>
-
+                <Link to="/users" style={{textDecoration:"none"}}>
                 <li>
                     <SupportAgentIcon className="Icon"/>
                     <span>Customers</span>
                 </li>
+                </Link>
 
+                <Link to="/List" style={{textDecoration:"none"}}>
                 <li>
                     <MapsHomeWorkIcon className="Icon"/>
                     <span>Listings</span>
                 </li>
+                </Link>
 
                 <li>
                     <ReceiptIcon className="Icon"/>
