@@ -11,7 +11,6 @@ import New from "./pages/new/New";
 import List from "./pages/list/List";
 import {AuthContext} from "./components/context/AuthContext";
 import { useContext } from "react"
-import { userInputs } from "./formSource";
 function App() {
 
 
@@ -34,13 +33,13 @@ console.log(currentUser)
         <Route path="users"  >
         <Route index element={<ReqireAuth><List /></ReqireAuth>} />
         <Route path=":userId" element={<ReqireAuth><Single /></ReqireAuth>} />
-        <Route path="new" element={<ReqireAuth><New inputs={userInputs} title ="Add New User" /></ReqireAuth>} />
+        <Route path="new" element={<ReqireAuth><New /></ReqireAuth>} />
         </Route>
 
         <Route path="listings"  >
         <Route index element={<ReqireAuth><List /></ReqireAuth>} />
         <Route path=":listingid" element={<ReqireAuth><Single /></ReqireAuth>} />
-        <Route path="new" element={<ReqireAuth><New inputs={userInputs} title ="Add New Listing" /></ReqireAuth>} />
+        <Route path="new" element={<ReqireAuth><New /></ReqireAuth>} />
         </Route>
 
 
