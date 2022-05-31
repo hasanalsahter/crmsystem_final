@@ -4,7 +4,7 @@ import Navbar from "../../components/navbar/Navbar"
 import Datatable from "../../components/datatable/Datatable"
 function List() {
   return (
-    <div className="haraaaa">
+    <div className="list">
       <Sidebar/>
       <div className="listContainer">
         <Navbar/>
