@@ -20,7 +20,6 @@ const ReqireAuth = ({children}) =>{
 
   return currentUser ? (children) : <Navigate to="/Login"/>
 };
-console.log(currentUser)
   return (
     <div className="App">
    <BrowserRouter>
