@@ -1,5 +1,6 @@
 import Home from "./pages/home/Home"
 import Login from "./pages/login/Login";
+import { productInputs, userInputs } from "./formSource";
 import {
   BrowserRouter,
   Routes,
@@ -32,13 +33,13 @@ const ReqireAuth = ({children}) =>{
         <Route path="users"  >
         <Route index element={<ReqireAuth><List /></ReqireAuth>} />
         <Route path=":userId" element={<ReqireAuth><Single /></ReqireAuth>} />
-        <Route path="new" element={<ReqireAuth><New /></ReqireAuth>} />
+        <Route path="new" element={<ReqireAuth><New inputs={userInputs}/></ReqireAuth>} />
         </Route>
 
         <Route path="listings"  >
         <Route index element={<ReqireAuth><List /></ReqireAuth>} />
         <Route path=":listingid" element={<ReqireAuth><Single /></ReqireAuth>} />
-        <Route path="new" element={<ReqireAuth><New /></ReqireAuth>} />
+        <Route path="new" element={<ReqireAuth><New  inputs={productInputs} /></ReqireAuth>} />
         </Route>
 
 

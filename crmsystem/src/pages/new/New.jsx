@@ -4,7 +4,10 @@ import Navbar from "../../components/navbar/Navbar"
 import DriveFolderUploadIcon from '@mui/icons-material/DriveFolderUpload';
 import { doc, setDoc } from "firebase/firestore"; 
 
+
+
 const New = () => {
+  
   return (
     <div className="new">
       <Sidebar />
@@ -21,8 +24,14 @@ const New = () => {
         <div className="right">
           <form >
           <div className="formInput">
-              <label > <DriveFolderUploadIcon />  </label>
-              <input type="file"  />
+              <label htmlFor="file">
+                 Image:   <DriveFolderUploadIcon className="icon" />  
+              </label>
+              <input
+               type="file"
+               id="file"
+               style={{ display: "none" }}
+               />
             </div>
           <div className="formInput">
               <label > Username </label>
@@ -30,7 +39,7 @@ const New = () => {
             </div>
             <div className="formInput">
               <label > Name and surname </label>
-              <input type="text" placeholder="kamil_koc" />
+              <input type="text" placeholder="kamil koc" />
             </div>   
             <div className="formInput">
               <label > Email </label>
