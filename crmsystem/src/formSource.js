@@ -19,3 +19,22 @@ export const userInputs=[
     },
     
 ];
+
+
+export const productInputs=[
+
+    {
+        id:1,
+        label:"Username",
+        type:"text",
+        placeholder:"john_doe",
+     },
+     {
+        id:2,
+        label:"Name and surname",
+        type:"text",
+        placeholder:"John Doe",
+      },
+
+
+];
