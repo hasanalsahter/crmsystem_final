@@ -12,6 +12,12 @@ import {Link} from "react-router-dom";
 
 function Sidebar() {
    
+
+    const deleteItem = (index) =>{
+        localStorage.removeItem(index);
+        localStorage.clear();
+    }
+
   return (
     <div className="sidebar">
         <div className="top">
@@ -72,11 +78,16 @@ function Sidebar() {
                     <SettingsIcon className="Icon"/>
                     <span>Settings</span>
                 </li>
-
+                
                 <li>
+                    
                     <LogoutIcon className="Icon"/>
-                    <span>Logout</span>
+                    <Link to="/Login" style={{textDecoration:"none"}}>
+                    <span onClick={() => deleteItem("user")}>Logout</span>
+                    </Link>
+                    
                 </li>
+                
             </ul>
         </div>
         <div className="bottom">

@@ -27,7 +27,7 @@ export default function Login() {
   .catch((error) => {
     
     setError(true)
-    // ..
+  
   });
 
   };
