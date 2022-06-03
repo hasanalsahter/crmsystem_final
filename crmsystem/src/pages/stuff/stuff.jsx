@@ -4,7 +4,7 @@ import Navbar from "../../components/navbar/Navbar"
 import DriveFolderUploadIcon from '@mui/icons-material/DriveFolderUpload';
 import { addDoc, collection, doc, serverTimestamp, setDoc } from "firebase/firestore"; 
 import{db} from "../../firebease";
-
+import Datatable from "../../components/datatable/Datatable";
 
 const staff = () => {
   
@@ -75,7 +75,9 @@ const AddStuff = async(e) =>{
           </form>
         </div>
          </div>
+         <Datatable/>
       </div>
+     
     </div>
   )
 }
