@@ -1,22 +1,35 @@
 export const userInputs=[
     {
        id:1,
-       label:"Username",
-       type:"text",
-       placeholder:"john_doe",
-    },
-    {
-       id:2,
        label:"Name and surname",
        type:"text",
        placeholder:"John Doe",
      },
     {
-        id:3,
+        id:2,
         label:"Email",
          type:"mail",
         placeholder:"john_doe@gmail.com",
     },
+    {
+      id:3,
+      label:"Phone number",
+       type:"phoner number",
+      placeholder:"+90 541 463 39 03 ",
+  },
+  {
+    id:4,
+    label:"Other contact information ",
+     type:"text",
+     placeholder:"john_doe@gmail.com",
+   
+},
+{
+  id:5,
+  label:"customer representative",
+   type:"datalist",
+  
+},
     
 ];
 
