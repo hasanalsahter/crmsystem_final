@@ -43,7 +43,7 @@ const ReqireAuth = ({children}) =>{
         </Route>
 
         <Route path="users"  >
-        <Route index element={<ReqireAuth><List  rows={userRows} colums={userColumns} title="Users" bath="/users/new" /></ReqireAuth>} />
+        <Route index element={<ReqireAuth><List /></ReqireAuth>} />
         <Route path=":userId" element={<ReqireAuth><Single  /></ReqireAuth>} />
         <Route path="new" element={<ReqireAuth><New inputs={userInputs} title="Add New User"/></ReqireAuth>} />
         </Route>
