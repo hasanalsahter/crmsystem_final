@@ -7,6 +7,26 @@ import { DataGrid } from '@mui/x-data-grid';
 import { userColumns , userRows } from "../../datatablesource";
 
 
+
+
+
+const List = () => {
+  return (
+    <div className="list">
+      <Sidebar/>
+      <div className="listContainer">
+        <Navbar/>
+        <Datatable  rows={userRows} colums={userColumns} title="Users" bath="/users/new" />
+      </div>
+    </div>
+  )
+}
+
+export default List
+
+
+
+/*
 function List( {rows , colums , title ,bath } ) {
 
 
@@ -56,4 +76,6 @@ function List( {rows , colums , title ,bath } ) {
 }
 
 export default List
+
+*/
 
