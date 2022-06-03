@@ -4,16 +4,20 @@ import Navbar from "../../components/navbar/Navbar"
 import DriveFolderUploadIcon from '@mui/icons-material/DriveFolderUpload';
 import { addDoc, collection, doc, serverTimestamp, setDoc } from "firebase/firestore"; 
 import{db} from "../../firebease";
+import { useState } from "react";
 
 
 const New = ({inputs , title }) => {
-  
+
+  const [file , setFile] = useState("");
+  //const 
+
 const AddCustomers = async(e) =>{
   e.preventDefault()
   try{
     //addDoc(collection(datbasename,(collection name))) this methode used if you dont want to have certen id for the Doc
     //create colection to add data in it doc(databaseconnecting (conf),colection,id for the table)
-    const res = await addDoc(collection(db, "cities"), {
+    const res = await addDoc(collection(db, "users"), {
       name: "Los Angeles",
       state: "CA",
       country: "tr",

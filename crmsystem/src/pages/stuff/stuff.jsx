@@ -75,7 +75,7 @@ const AddStuff = async(e) =>{
           </form>
         </div>
          </div>
-         <Datatable/>
+         <Datatable />
       </div>
      
     </div>
