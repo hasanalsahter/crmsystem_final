@@ -7,11 +7,13 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import {AuthContext} from "./components/context/AuthContext";
+import { useContext } from "react"
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
 import List from "./pages/list/List";
-import {AuthContext} from "./components/context/AuthContext";
-import { useContext } from "react"
+import Messages from "./pages/messages/messages";
+import Staff from "./pages/stuff/stuff";
 function App() {
 
 
@@ -29,6 +31,15 @@ const ReqireAuth = ({children}) =>{
       <Route path="login" element={<Login />} />
         <Route index element={<ReqireAuth>  <Home /></ReqireAuth>} />
        
+        <Route path="messages"  >
+        <Route index element={<ReqireAuth> <Messages /></ReqireAuth>} />
+        <Route index element={<ReqireAuth>  <Home /></ReqireAuth>} />
+        </Route>
+
+        <Route path="staff"  >
+        <Route index element={<ReqireAuth> <Staff /></ReqireAuth>} />
+        <Route index element={<ReqireAuth>  <Home /></ReqireAuth>} />
+        </Route>
 
         <Route path="users"  >
         <Route index element={<ReqireAuth><List /></ReqireAuth>} />
