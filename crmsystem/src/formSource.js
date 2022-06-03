@@ -14,7 +14,7 @@ export const userInputs=[
     {
         id:3,
         label:"Email",
-        type:"mail",
+         type:"mail",
         placeholder:"john_doe@gmail.com",
     },
     
@@ -25,15 +25,45 @@ export const productInputs=[
 
     {
         id:1,
-        label:"Username",
+        label:"Catagory",
         type:"text",
         placeholder:"john_doe",
      },
      {
         id:2,
-        label:"Name and surname",
+        label:"state",
         type:"text",
-        placeholder:"John Doe",
+        placeholder:"Istanbl",
+      },
+      {
+        id:3,
+        label:"city",
+        type:"text",
+        placeholder:"Florya",
+      },
+      {
+        id:4,
+        label:"neighborhood",
+        type:"text",
+        placeholder:"cum mah",
+      },
+      {
+        id:5,
+        label:"street",
+        type:"text",
+        placeholder:"Cevval sk",
+      },
+      {
+        id:6,
+        label:"Bulding",
+        type:"text",
+        placeholder:"Cevval sk",
+      },
+      {
+        id:7,
+        label:"Door num",
+        type:"text",
+        placeholder:"15",
       },
 
 

@@ -47,7 +47,7 @@ function Sidebar() {
                 </li>
                 </Link>
 
-                <Link to="/Listing" style={{textDecoration:"none"}}>
+                <Link to="/Listings" style={{textDecoration:"none"}}>
                 <li>
                     <MapsHomeWorkIcon className="Icon"/>
                     <span>Listings</span>

@@ -1,6 +1,7 @@
 import Home from "./pages/home/Home"
 import Login from "./pages/login/Login";
-import { productInputs, userInputs } from "./formSource";
+import { productInputs, userInputs , } from "./formSource";
+import {userRows , userColumns , proColumns , proRows} from"./datatablesource"
 import {
   BrowserRouter,
   Routes,
@@ -42,15 +43,15 @@ const ReqireAuth = ({children}) =>{
         </Route>
 
         <Route path="users"  >
-        <Route index element={<ReqireAuth><List /></ReqireAuth>} />
-        <Route path=":userId" element={<ReqireAuth><Single /></ReqireAuth>} />
-        <Route path="new" element={<ReqireAuth><New inputs={userInputs}/></ReqireAuth>} />
+        <Route index element={<ReqireAuth><List  rows={userRows} colums={userColumns} title="Users" bath="/users/new" /></ReqireAuth>} />
+        <Route path=":userId" element={<ReqireAuth><Single  /></ReqireAuth>} />
+        <Route path="new" element={<ReqireAuth><New inputs={userInputs} title="Add New User"/></ReqireAuth>} />
         </Route>
 
         <Route path="listings"  >
-        <Route index element={<ReqireAuth><List /></ReqireAuth>} />
-        <Route path=":listingid" element={<ReqireAuth><Single /></ReqireAuth>} />
-        <Route path="new" element={<ReqireAuth><New  inputs={productInputs} /></ReqireAuth>} />
+        <Route index element={<ReqireAuth><List  rows={proRows} colums={proColumns} title="Product" bath="/listings/new"  /></ReqireAuth>} />
+        <Route path=":listingid" element={<ReqireAuth><Single   /></ReqireAuth>} />
+        <Route path="new" element={<ReqireAuth><New  inputs={productInputs} title="Add New product" /></ReqireAuth>} />
         </Route>
 
 
