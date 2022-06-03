@@ -9,6 +9,7 @@ import BadgeIcon from '@mui/icons-material/Badge';
 import SettingsIcon from '@mui/icons-material/Settings';
 import LogoutIcon from '@mui/icons-material/Logout';
 import {Link} from "react-router-dom";
+import { auth } from "../../firebease";
 
 function Sidebar() {
    
@@ -16,6 +17,7 @@ function Sidebar() {
     const deleteItem = (index) =>{
         localStorage.removeItem(index);
         localStorage.clear();
+        auth.signOut();
     }
 
   return (
