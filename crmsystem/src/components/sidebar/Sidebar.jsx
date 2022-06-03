@@ -12,8 +12,6 @@ import {Link} from "react-router-dom";
 import { auth } from "../../firebease";
 
 function Sidebar() {
-   
-
     const deleteItem = (index) =>{
         localStorage.removeItem(index);
         localStorage.clear();
@@ -23,15 +21,17 @@ function Sidebar() {
   return (
     <div className="sidebar">
         <div className="top">
+            
             <Link to="/" style={{textDecoration:"none"}}>
             <span className="logo">Forica</span>
             </Link>
-            </div>
-            
+
+            </div> 
+
         <div className="center">
             <ul>
 
-                <p className="title">Main</p>
+              <p className="title">Main</p>
                 <Link to="/" style={{textDecoration:"none"}}>
                 <li>
 
