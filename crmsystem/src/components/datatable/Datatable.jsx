@@ -25,7 +25,7 @@ const Datatable = ({rows , colums , title , bath}) => {
         <div className="datatable"> 
         <div className="datatableTitle">
           <h1>{title}</h1>
-            <Link to="/New" style={{ textDecoratio:"none"}} className="link">
+            <Link to={bath} style={{ textDecoratio:"none"}} className="link">
             Add New
             </Link>
         </div>
