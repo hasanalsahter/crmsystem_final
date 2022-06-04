@@ -92,46 +92,35 @@ export const StaffInput=[
 
   {
       id:1,
-      label:"Catagory",
+      label:"name",
       type:"text",
       placeholder:"john_doe",
    },
    {
       id:2,
-      label:"state",
+      label:"rol",
       type:"text",
       placeholder:"Istanbl",
     },
     {
       id:3,
-      label:"city",
+      label:"email",
       type:"text",
       placeholder:"Florya",
     },
     {
       id:4,
-      label:"neighborhood",
-      type:"text",
+      label:"password",
+      type:"password",
       placeholder:"cum mah",
     },
     {
       id:5,
-      label:"street",
+      label:"address",
       type:"text",
       placeholder:"Cevval sk",
     },
-    {
-      id:6,
-      label:"Bulding",
-      type:"text",
-      placeholder:"Cevval sk",
-    },
-    {
-      id:7,
-      label:"Door num",
-      type:"text",
-      placeholder:"15",
-    },
+  
 
 
 ];

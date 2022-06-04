@@ -38,19 +38,19 @@ const ReqireAuth = ({children}) =>{
         </Route>
 
         <Route path="staff"  >
-        <Route index element={<ReqireAuth><List rows={StaffRows} colums={Satffcolumns} title="Staff" bath="/Staff/new" /></ReqireAuth>} />
+        <Route index element={<ReqireAuth><List rows={StaffRows} colums={Satffcolumns} title="Staff" bath="/Staff/new" viewbath="/Staff/single" /></ReqireAuth>} />
         <Route path=":staffId" element={<ReqireAuth><Single  /></ReqireAuth>} />
-        <Route path="new" element={<ReqireAuth><New inputs={StaffInput} title="Add Worker"/></ReqireAuth>} />
+        <Route path="new" element={<ReqireAuth><New inputs={StaffInput} title="Add A New Employer"/></ReqireAuth>} />
         </Route>
 
         <Route path="users"  >
-        <Route index element={<ReqireAuth><List rows={userRows} colums={userColumns} title="Customers" bath="/users/new" /></ReqireAuth>} />
+        <Route index element={<ReqireAuth><List rows={userRows} colums={userColumns} title="Customers" bath="/users/new"   viewbath="/users/single" /></ReqireAuth>} />
         <Route path=":userId" element={<ReqireAuth><Single  /></ReqireAuth>} />
         <Route path="new" element={<ReqireAuth><New inputs={userInputs} title="Add New User"/></ReqireAuth>} />
         </Route>
 
         <Route path="listings"  >
-        <Route index element={<ReqireAuth><List  rows={proRows} colums={proColumns} title="Product" bath="/listings/new"  /></ReqireAuth>} />
+        <Route index element={<ReqireAuth><List  rows={proRows} colums={proColumns} title="Product" bath="/listings/new"  viewbath="/listings/single" /></ReqireAuth>} />
         <Route path=":listingid" element={<ReqireAuth><Single   /></ReqireAuth>} />
         <Route path="new" element={<ReqireAuth><New  inputs={productInputs} title="Add New product" /></ReqireAuth>} />
         </Route>

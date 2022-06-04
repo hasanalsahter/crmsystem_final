@@ -27,14 +27,14 @@ export default List
 
 */
 
-function List( {rows , colums , title ,bath } ) {
+function List( {rows , colums , title ,bath , viewbath} ) {
 
 
 
   const actionColumn = [{ field:"action", headerName:"Action", width:200, renderCell:()=>{
     return(
         <div className="cellAction">
-      <Link to={bath} style={{textDecoration:"none"}}><div className="viewbutton">View</div>
+      <Link to={viewbath} style={{textDecoration:"none"}}><div className="viewbutton">View</div>
       </Link> 
             <div className="deleteButton">Delete</div>
         </div>
