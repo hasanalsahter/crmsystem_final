@@ -17,7 +17,6 @@ const New = ({inputs , title ,dataset}) => {
     const uploadFile = ()=>{
       const Pic_name= new Date().getTime() + file.name
       const storageRef = ref(storage, Pic_name);
-
       const uploadTask = uploadBytesResumable(storageRef, file);
 
 
@@ -59,7 +58,7 @@ uploadTask.on('state_changed',
     setData({...data , [id]:value});
   };
 
-const AddCustomers = async(e) =>{
+const AddDoc = async(e) =>{
   e.preventDefault()
   try{
     await addDoc(collection(db, dataset), {
@@ -90,7 +89,7 @@ const AddCustomers = async(e) =>{
               alt="" />
         </div>
         <div className="right">
-          <form onSubmit={AddCustomers}>
+          <form onSubmit={AddDoc}>
           <div className="formInput">
               <label htmlFor="file">
                  Image:   <DriveFolderUploadIcon className="icon" />  
