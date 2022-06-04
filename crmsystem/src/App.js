@@ -41,7 +41,7 @@ const ReqireAuth = ({children}) =>{
         <Route path="staff"  >
         <Route index element={<ReqireAuth><List rows={StaffRows} colums={Satffcolumns} title="Staff" bath="/Staff/new" viewbath="/Staff/single" /></ReqireAuth>} />
         <Route path=":staffId" element={<ReqireAuth><Single  /></ReqireAuth>} />
-        <Route path="new" element={<ReqireAuth><StaffNew inputs={StaffInput} title="Add A New Employe"/></ReqireAuth>} />
+        <Route path="new" element={<ReqireAuth><StaffNew inputs={StaffInput} title="Add A New Employe" dataset="staff"/></ReqireAuth>} />
         </Route>
 
         <Route path="users"  >
@@ -53,7 +53,7 @@ const ReqireAuth = ({children}) =>{
         <Route path="listings"  >
         <Route index element={<ReqireAuth><List  rows={proRows} colums={proColumns} title="Product" bath="/listings/new"  viewbath="/listings/single" /></ReqireAuth>} />
         <Route path=":listingid" element={<ReqireAuth><Single   /></ReqireAuth>} />
-        <Route path="new" element={<ReqireAuth><New  inputs={productInputs} title="Add New product" /></ReqireAuth>} />
+        <Route path="new" element={<ReqireAuth><New  inputs={productInputs} title="Add New product" dataset="listings" /></ReqireAuth>} />
         </Route>
 
 
