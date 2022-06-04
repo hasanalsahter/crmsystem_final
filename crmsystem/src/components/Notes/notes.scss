@@ -1,7 +1,53 @@
 .note{
     display: flex;
     width: 100%;
-    flex: 1;
+    flex: 4;
     flex-direction: row;
     justify-content: space-between;
+    padding-top: 20px ;
+    border-bottom: 1px solid rgb(227, 227, 227);
+    
+
+
+
+
+    span{
+    flex: 2;
+    }
+
+
+    small{
+        flex: 1;
+    }
+
+    .Icon{
+        flex: 1;
+    }
+
+
+    
+        textarea{
+            border: none;
+            resize: none;
+            background-color: white;
+            max-height: 30px;
+            flex: 1;
+        }
+        textarea:focus{
+            outline: none;
+        }
+
+
+        .save{
+            background-color: green;
+            border-radius: 10px;
+            padding: 0.5rem;
+            border: none;
+            color: white;
+            margin-bottom: 10px;
+           
+            
+            
+        }
+    
 }

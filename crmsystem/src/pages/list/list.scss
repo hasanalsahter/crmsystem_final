@@ -2,14 +2,16 @@
     display: flex;
     width: 100%;
     font-family: 'Nunito', sans-serif;
-
+    border-radius: 10px;
 }
 .listContainer{
     flex: 6;
+    border-radius: 10px;
 }
 .datatable{
     height: 85%;
     padding: 20px;
+    border-radius: 10px;
     
     .datatableTitle{
         width: 100%;

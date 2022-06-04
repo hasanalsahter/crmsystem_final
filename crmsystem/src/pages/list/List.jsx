@@ -42,7 +42,6 @@ function List( {rows , colums , title ,bath , viewbath} ) {
   }}]
   
 
-
   return (
 
    

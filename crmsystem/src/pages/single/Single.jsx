@@ -4,8 +4,38 @@ import Navbar from "../../components/navbar/Navbar"
 import List from "../../components/table/Table"
 import Chart from "../../components/chart/Chart"
 import Notelist from "../../components/Notes/Noteslist"
+import { useState } from "react"
+import { nanoid } from 'nanoid';
+import AddNote from "../../components/Notes/AddNote.jsx"
 
+
+  
 function Single() {
+
+  const [notess, setNotes] = useState([
+		{
+			id: nanoid(),
+			text: 'This is my first note!',
+			date: '15/04/2021',
+		},
+		{
+			id: nanoid(),
+			text: 'This is my second note!',
+			date: '21/04/2021',
+		},
+		{
+			id: nanoid(),
+			text: 'This is my third note!',
+			date: '28/04/2021',
+		},
+	
+	]);
+
+
+  
+  
+  
+
   return (
     <div className="single">
     <Sidebar />
@@ -52,7 +82,7 @@ function Single() {
 
         <div className="bottom">
     <div className="NoteSystem">
-    <div className="AddnewNote"> Add a new Note</div>
+    <div className="AddnewNote"> <AddNote /></div>
     <div className="NoteText"> </div>
     <div className="AddNoteButton"></div>
 
@@ -61,7 +91,7 @@ function Single() {
 
         <div className="bottom">
     <div className="Notes">
-    <Notelist />
+    <Notelist notes={notess}/>
     </div>
         </div>
 
