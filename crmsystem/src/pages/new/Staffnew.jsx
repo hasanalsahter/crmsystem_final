@@ -2,11 +2,13 @@ import "./new.scss"
 import Sidebar from "../../components/sidebar/Sidebar"
 import Navbar from "../../components/navbar/Navbar"
 import DriveFolderUploadIcon from '@mui/icons-material/DriveFolderUpload';
-import { addDoc, collection, serverTimestamp } from "firebase/firestore"; 
-import{db,storage} from "../../firebease";
+import { addDoc, collection, serverTimestamp, setDoc ,doc} from "firebase/firestore"; 
+import { db , storage , auth} from "../../firebease";
 import { useState } from "react";
 import {  ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { useEffect } from "react";
+import {  createUserWithEmailAndPassword } from "firebase/auth";
+
 
 const StaffNew = ({inputs , title ,dataset}) => {
 
@@ -15,10 +17,9 @@ const StaffNew = ({inputs , title ,dataset}) => {
 
   useEffect(()=>{
     const uploadFile = ()=>{
-      const Pic_name= new Date().getTime() + file.name
-      const storageRef = ref(storage, Pic_name);
-
-      const uploadTask = uploadBytesResumable(storageRef, file);
+    const Pic_name= new Date().getTime() + file.name
+    const storageRef = ref(storage, Pic_name);
+    const uploadTask = uploadBytesResumable(storageRef, file);
 
 
 uploadTask.on('state_changed', 
@@ -52,17 +53,27 @@ uploadTask.on('state_changed',
     file && uploadFile();
   },[file])
 
-  const Add_Customer_Info = (e) =>{
+
+
+
+
+
+  const Add_Staff_Info = (e) =>{
     const id =e.target.id;
     const value = e.target.value;
 
     setData({...data , [id]:value});
   };
 
-const AddCustomers = async(e) =>{
+
+
+
+
+const AddStaff = async(e) =>{
   e.preventDefault()
   try{
-    await addDoc(collection(db, dataset), {
+    const res =await createUserWithEmailAndPassword(auth, data.Staff_Email, data.Staff_password);
+    await setDoc(doc(db, "Staff" , res.user.uid), {
       ...data,
       timestamp: serverTimestamp()
     });
@@ -70,6 +81,9 @@ const AddCustomers = async(e) =>{
     console.log(err);
   } 
 }
+
+
+
 
 
   return (
@@ -90,7 +104,7 @@ const AddCustomers = async(e) =>{
               alt="" />
         </div>
         <div className="right">
-          <form onSubmit={AddCustomers}>
+          <form onSubmit={AddStaff}>
           <div className="formInput">
               <label htmlFor="file">
                  Image:   <DriveFolderUploadIcon className="icon" />  
@@ -108,7 +122,7 @@ const AddCustomers = async(e) =>{
             
           <div className="formInput" key={input.id} > 
               <label > {input.label} </label>
-              <input id={input.id} type={input.type} placeholder={input.placeholder} onChange={Add_Customer_Info}/>
+              <input id={input.id} type={input.type} placeholder={input.placeholder} onChange={Add_Staff_Info}/>
             </div>
             ))}
             <button>send</button>

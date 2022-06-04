@@ -38,43 +38,43 @@ export const userInputs=[
 export const productInputs=[
 
     {
-        id:1,
+        id:"listings_Catagory",
         label:"Catagory",
         type:"text",
         placeholder:"john_doe",
      },
      {
-        id:2,
+        id:"listings_state",
         label:"state",
         type:"text",
         placeholder:"Istanbl",
       },
       {
-        id:3,
+        id:"listings_city",
         label:"city",
         type:"text",
         placeholder:"Florya",
       },
       {
-        id:4,
+        id:"listings_neighborhood",
         label:"neighborhood",
         type:"text",
         placeholder:"cum mah",
       },
       {
-        id:5,
+        id:"listings_street",
         label:"street",
         type:"text",
         placeholder:"Cevval sk",
       },
       {
-        id:6,
+        id:"listings_Bulding",
         label:"Bulding",
         type:"text",
         placeholder:"Cevval sk",
       },
       {
-        id:7,
+        id:"listings_Door_num",
         label:"Door num",
         type:"text",
         placeholder:"15",
@@ -91,31 +91,31 @@ export const productInputs=[
 export const StaffInput=[
 
   {
-      id:1,
+      id:"Staff_name",
       label:"Name",
       type:"text",
       placeholder:"john_doe",
    },
    {
-      id:2,
+      id:"Staff_Rol",
       label:"Rol",
       type:"text",
       placeholder:"Istanbl",
     },
     {
-      id:3,
+      id:"Staff_Email",
       label:"Email",
       type:"text",
       placeholder:"Florya",
     },
     {
-      id:4,
+      id:"Staff_password",
       label:"Password",
       type:"password",
       placeholder:"cum mah",
     },
     {
-      id:5,
+      id:"Staff_address",
       label:"Address",
       type:"text",
       placeholder:"Cevval sk",

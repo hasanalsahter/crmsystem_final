@@ -2,8 +2,10 @@ import "./datatable.scss"
 import { DataGrid } from '@mui/x-data-grid';
 import { userColumns , userRows } from "../../datatablesource";
 import {Link} from "react-router-dom";
-
-
+import { useState } from "react";
+import { useEffect } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebease";
 
 const actionColumn = [{ field:"action", headerName:"Action", width:200, renderCell:()=>{
   return(
@@ -16,10 +18,26 @@ const actionColumn = [{ field:"action", headerName:"Action", width:200, renderCe
 }}]
 
 
-const Datatable = ({rows , colums , title , bath}) => {
+const Datatable = ({rows , colums , title , bath, table_collection }) => {
+  
+    const [data , setData] = useState([]);
+    useEffect(()=>{
+      const fetchData = async ()=>{
+        let list =[];
+        try{
 
-    
-   
+          const querySnapshot = await getDocs(collection(db, table_collection));
+          querySnapshot.forEach((doc) => {
+            console.log(doc.id, " => ", doc.data());
+          });
+          setData(list);
+        }catch(err){
+         console.log(err);
+        }
+      }
+      fetchData();
+    },[])
+   console.log(data);
 
     return (
         <div className="datatable"> 
