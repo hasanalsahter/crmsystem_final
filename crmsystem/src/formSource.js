@@ -92,31 +92,31 @@ export const StaffInput=[
 
   {
       id:1,
-      label:"name",
+      label:"Name",
       type:"text",
       placeholder:"john_doe",
    },
    {
       id:2,
-      label:"rol",
+      label:"Rol",
       type:"text",
       placeholder:"Istanbl",
     },
     {
       id:3,
-      label:"email",
+      label:"Email",
       type:"text",
       placeholder:"Florya",
     },
     {
       id:4,
-      label:"password",
+      label:"Password",
       type:"password",
       placeholder:"cum mah",
     },
     {
       id:5,
-      label:"address",
+      label:"Address",
       type:"text",
       placeholder:"Cevval sk",
     },
