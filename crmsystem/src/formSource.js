@@ -14,8 +14,9 @@ export const userInputs=[
     {
       id:"phone_customer",
       label:"Phone number",
-       type:"phoner number",
+       type:"tel",
       placeholder:"+90 541 463 39 03 ",
+      
   },
   {
     id:"Extra_Info_Customer",
@@ -78,6 +79,59 @@ export const productInputs=[
         type:"text",
         placeholder:"15",
       },
+
+
+];
+
+
+
+
+
+
+export const StaffInput=[
+
+  {
+      id:1,
+      label:"Catagory",
+      type:"text",
+      placeholder:"john_doe",
+   },
+   {
+      id:2,
+      label:"state",
+      type:"text",
+      placeholder:"Istanbl",
+    },
+    {
+      id:3,
+      label:"city",
+      type:"text",
+      placeholder:"Florya",
+    },
+    {
+      id:4,
+      label:"neighborhood",
+      type:"text",
+      placeholder:"cum mah",
+    },
+    {
+      id:5,
+      label:"street",
+      type:"text",
+      placeholder:"Cevval sk",
+    },
+    {
+      id:6,
+      label:"Bulding",
+      type:"text",
+      placeholder:"Cevval sk",
+    },
+    {
+      id:7,
+      label:"Door num",
+      type:"text",
+      placeholder:"15",
+    },
 
 
 ];

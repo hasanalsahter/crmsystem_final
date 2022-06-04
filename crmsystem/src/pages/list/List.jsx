@@ -8,7 +8,7 @@ import { userColumns , userRows } from "../../datatablesource";
 
 
 
-
+/*
 
 const List = () => {
   return (
@@ -25,8 +25,8 @@ const List = () => {
 export default List
 
 
+*/
 
-/*
 function List( {rows , colums , title ,bath } ) {
 
 
@@ -77,5 +77,5 @@ function List( {rows , colums , title ,bath } ) {
 
 export default List
 
-*/
+
 

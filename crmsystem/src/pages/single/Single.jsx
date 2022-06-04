@@ -3,6 +3,7 @@ import Sidebar from "../../components/sidebar/Sidebar"
 import Navbar from "../../components/navbar/Navbar"
 import List from "../../components/table/Table"
 import Chart from "../../components/chart/Chart"
+import Notelist from "../../components/Notes/Noteslist"
 
 function Single() {
   return (
@@ -47,10 +48,29 @@ function Single() {
             <Chart aspect={3 / 1} title="User Spending ( Last 6 Months)" />
           </div>
         </div>
+
+
         <div className="bottom">
-        <h1 className="title">Last Transactions</h1>
+    <div className="NoteSystem">
+    <div className="AddnewNote"> Add a new Note</div>
+    <div className="NoteText"> </div>
+    <div className="AddNoteButton"></div>
+
+    </div>
+        </div>
+
+        <div className="bottom">
+    <div className="Notes">
+    <Notelist />
+    </div>
+        </div>
+
+        <div className="bottom">
+        <h1 className="title">Last</h1>
           <List/>
         </div>
+
+
    </div>
  </div>
   )
