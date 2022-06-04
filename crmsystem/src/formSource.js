@@ -91,32 +91,32 @@ export const productInputs=[
 export const StaffInput=[
 
   {
-      id:"Staff_name",
-      label:"name",
+      id:1,
+      label:"Name",
       type:"text",
       placeholder:"john_doe",
    },
    {
-      id:"Staff_Rol",
-      label:"rol",
+      id:2,
+      label:"Rol",
       type:"text",
       placeholder:"Istanbl",
     },
     {
-      id:"Staff_Email",
-      label:"email",
+      id:3,
+      label:"Email",
       type:"text",
       placeholder:"Florya",
     },
     {
-      id:"Staff_password",
-      label:"password",
+      id:4,
+      label:"Password",
       type:"password",
       placeholder:"cum mah",
     },
     {
-      id:"Staff_address",
-      label:"address",
+      id:5,
+      label:"Address",
       type:"text",
       placeholder:"Cevval sk",
     },

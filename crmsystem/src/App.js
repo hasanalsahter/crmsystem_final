@@ -12,6 +12,7 @@ import {AuthContext} from "./components/context/AuthContext";
 import { useContext } from "react"
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
+import StaffNew from "./pages/new/Staffnew";
 import List from "./pages/list/List";
 import Messages from "./pages/messages/messages";
 import Staff from "./pages/stuff/stuff";
@@ -40,7 +41,7 @@ const ReqireAuth = ({children}) =>{
         <Route path="staff"  >
         <Route index element={<ReqireAuth><List rows={StaffRows} colums={Satffcolumns} title="Staff" bath="/Staff/new" viewbath="/Staff/single" /></ReqireAuth>} />
         <Route path=":staffId" element={<ReqireAuth><Single  /></ReqireAuth>} />
-        <Route path="new" element={<ReqireAuth><New inputs={StaffInput} title="Add A New Employer"/></ReqireAuth>} />
+        <Route path="new" element={<ReqireAuth><StaffNew inputs={StaffInput} title="Add A New Employe"/></ReqireAuth>} />
         </Route>
 
         <Route path="users"  >
