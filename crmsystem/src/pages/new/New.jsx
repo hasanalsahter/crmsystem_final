@@ -2,7 +2,7 @@ import "./new.scss"
 import Sidebar from "../../components/sidebar/Sidebar"
 import Navbar from "../../components/navbar/Navbar"
 import DriveFolderUploadIcon from '@mui/icons-material/DriveFolderUpload';
-import { addDoc, collection, doc, serverTimestamp, setDoc } from "firebase/firestore"; 
+import { addDoc, collection, serverTimestamp } from "firebase/firestore"; 
 import{db} from "../../firebease";
 import { useState } from "react";
 
@@ -10,17 +10,20 @@ import { useState } from "react";
 const New = ({inputs , title }) => {
 
   const [file , setFile] = useState("");
-  //const 
+  const [data , setData] = useState({}); 
+
+  const Add_Customer_Info = (e) =>{
+    const id =e.target.id;
+    const value = e.target.value;
+
+    setData({...data , [id]:value});
+  };
 
 const AddCustomers = async(e) =>{
   e.preventDefault()
   try{
-    //addDoc(collection(datbasename,(collection name))) this methode used if you dont want to have certen id for the Doc
-    //create colection to add data in it doc(databaseconnecting (conf),colection,id for the table)
-    const res = await addDoc(collection(db, "users"), {
-      name: "Los Angeles",
-      state: "CA",
-      country: "tr",
+    await addDoc(collection(db, "customers"), {
+      ...data,
       timestamp: serverTimestamp()
     });
   }catch(err){
@@ -60,7 +63,7 @@ const AddCustomers = async(e) =>{
             
           <div className="formInput" key={input.id} > 
               <label > {input.label} </label>
-              <input type={input.type} placeholder={input.placeholder} />
+              <input id={input.id} type={input.type} placeholder={input.placeholder} onChange={Add_Customer_Info}/>
             </div>
             ))}
             <button>send</button>

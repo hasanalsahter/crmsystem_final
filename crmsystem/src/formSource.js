@@ -1,32 +1,32 @@
 export const userInputs=[
     {
-       id:1,
+       id:"DisplayName_Customer",
        label:"Name and surname",
        type:"text",
        placeholder:"John Doe",
      },
     {
-        id:2,
+        id:"Email_customer",
         label:"Email",
          type:"mail",
         placeholder:"john_doe@gmail.com",
     },
     {
-      id:3,
+      id:"phone_customer",
       label:"Phone number",
        type:"tel",
       placeholder:"+90 541 463 39 03 ",
       
   },
   {
-    id:4,
+    id:"Extra_Info_Customer",
     label:"Other contact information ",
      type:"text",
      placeholder:"john_doe@gmail.com",
    
 },
 {
-  id:5,
+  id:"Customer_representative",
   label:"customer representative",
    type:"datalist",
   
