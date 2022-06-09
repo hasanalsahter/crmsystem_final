@@ -125,7 +125,7 @@ const AddStaff = async(e) =>{
               <input id={input.id} type={input.type} placeholder={input.placeholder} onChange={Add_Staff_Info}/>
             </div>
             ))}
-            <button>send</button>
+            <button type="submit" >send</button>
           </form>
         </div>
          </div>
