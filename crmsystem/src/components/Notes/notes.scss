@@ -12,7 +12,7 @@
 
 
     span{
-    flex: 2;
+    flex: 1;
     }
 
 
@@ -21,7 +21,7 @@
     }
 
     .Icon{
-        flex: 1;
+     
     }
 
 
@@ -45,9 +45,16 @@
             border: none;
             color: white;
             margin-bottom: 10px;
+            cursor: pointer;
+            
            
             
             
+        }
+
+
+        #delete{
+            cursor: pointer;
         }
     
 }
