@@ -5,7 +5,10 @@ import Datatable from "../../components/datatable/Datatable"
 import {Link} from "react-router-dom";
 import { DataGrid } from '@mui/x-data-grid';
 import { userColumns , userRows } from "../../datatablesource";
-
+import { useState } from "react";
+import { useEffect } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "../../firebease";
 
 
 /*
@@ -27,7 +30,25 @@ export default List
 
 */
 
-function List( {rows , colums , title ,bath , viewbath} ) {
+function List( {  colums , title ,bath , viewbath, table_collection} ) {
+  const [data , setData] = useState([]);
+  useEffect(()=>{
+    const fetchData = async ()=>{
+      let list_table =[];
+      try{
+
+        const querySnapshot = await getDocs(collection(db, table_collection));
+        querySnapshot.forEach((doc) => {
+        
+          list_table.push({id: doc.id, ...doc.data()});
+        });
+        setData(list_table);
+      }catch(err){
+       console.log(err);
+      }
+    }
+    fetchData();
+  },[data])
 
 
 
@@ -59,7 +80,7 @@ function List( {rows , colums , title ,bath , viewbath} ) {
             </Link>
         </div>
         <DataGrid
-        rows={rows}
+        rows={data}
         columns={colums.concat(actionColumn)}
         pageSize={9}
         rowsPerPageOptions={[9]}
