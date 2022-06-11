@@ -7,8 +7,9 @@ import { DataGrid } from '@mui/x-data-grid';
 import { userColumns , userRows } from "../../datatablesource";
 import { useState } from "react";
 import { useEffect } from "react";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { db } from "../../firebease";
+import { async } from "@firebase/util";
 
 
 /*
@@ -50,14 +51,21 @@ function List( {  colums , title ,bath , viewbath, table_collection} ) {
     fetchData();
   },[data])
 
+const Delete_datatable = async(id) => {
+  try {
+    await deleteDoc(doc(db, table_collection, id));
+    setData(data.filter((item) => item.id != id))
+  }catch(err){
+console.log(err)
+  }
+}
 
-
-  const actionColumn = [{ field:"action", headerName:"Action", width:200, renderCell:()=>{
+  const actionColumn = [{ field:"action", headerName:"Action", width:200, renderCell:(params)=>{
     return(
         <div className="cellAction">
       <Link to={viewbath} style={{textDecoration:"none"}}><div className="viewbutton">View</div>
       </Link> 
-            <div className="deleteButton">Delete</div>
+            <div className="deleteButton" onClick={() => Delete_datatable(params.row.id)}>Delete</div>
         </div>
     )
   }}]
