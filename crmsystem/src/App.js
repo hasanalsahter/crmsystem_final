@@ -36,7 +36,7 @@ const ReqireAuth = ({children}) =>{
        
         <Route path="messages"  >
         <Route index element={<ReqireAuth> <Messages /></ReqireAuth>} />
-        <Route index element={<ReqireAuth>  <Home /></ReqireAuth>} />
+        <Route index element={<ReqireAuth>  <Home  colums={contractscolums} viewbath="/contracts/single" table_collection="contracts" /></ReqireAuth>} />
         </Route>
 
         <Route path="staff"  >

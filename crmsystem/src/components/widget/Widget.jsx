@@ -6,19 +6,23 @@ import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
 import { useEffect, useState } from "react";
 import { collection , query , where , getDocs} from "firebase/firestore";
-import {  db } from "../../firebease";
+import { db } from "../../firebease";
+
+
 const Widget = ({ type }) => {
-  const [amount , setAmount] = useState(null)
-  const [diff , setDiff] = useState(null)
+
+  const [amount , setAmount] = useState(0);
+  const [diff , setDiff] = useState(null);
   let data;
 
 
   switch (type) {
     case "user":
       data = {
-        title: "Customers",
+        title: "customers",
         isMoney: false,
         link: "See all Customers",
+        query:"customers",
         icon: (
           <PersonOutlinedIcon
             className="icon"
@@ -35,6 +39,7 @@ const Widget = ({ type }) => {
         title: "Contracts",
         isMoney: false,
         link: "View all Contracts",
+        query:"contracts",
         icon: (
           <ShoppingCartOutlinedIcon
             className="icon"
@@ -48,9 +53,9 @@ const Widget = ({ type }) => {
       break;
     case "earning":
       data = {
-        title: "EARNINGS",
-        isMoney: true,
+        title: "Staff",
         link: "View net earnings",
+        query:"Staff",
         icon: (
           <MonetizationOnOutlinedIcon
             className="icon"
@@ -61,9 +66,9 @@ const Widget = ({ type }) => {
       break;
     case "balance":
       data = {
-        title: "BALANCE",
-        isMoney: true,
+        title: "Listings",
         link: "See details",
+        query:"listings",
         icon: (
           <AccountBalanceWalletOutlinedIcon
             className="icon"
@@ -78,26 +83,43 @@ const Widget = ({ type }) => {
     default:
       break;
   }
-useEffect (() =>{
-const fatchData = async () =>{
-const today = new Date();
-const prevMonth =new Date (new Date().setMonth(today.getMonth() -2))
-const lastMonth =new Date (new Date().setMonth(today.getMonth() -1))
+  useEffect(() => {
+    const fetchData = async () => {
+      const today = new Date();
+      const lastMonth = new Date(new Date().setMonth(today.getMonth() - 1));
+      const prevMonth = new Date(new Date().setMonth(today.getMonth() - 2));
 
+      const lastMonthQuery = query(
+        collection(db, "customers"),
+        where("timeStamp", "<=", today),
+        where("timeStamp", ">", lastMonth)
+      );
+    const prevMonthQuery = query(
+        collection(db, "customer"),
+        where("timeStamp", "<=", lastMonth),
+        where("timeStamp", ">", prevMonth)
+      );
+        
+     
+   
+      let  counter = 0;
+      const querySnapshot = await getDocs(collection(db, data.query));
+      querySnapshot.forEach((doc) => {
+        counter++;
+      });
+      
 
-const lastMonthQuery =query(collection(db , "customers") , where ("timeStamp","<=",today) , where ("timeStamp",">",lastMonth));
-const prevMonthQuery =query(collection(db , "customers") , where ("timeStamp","<=",lastMonth) , where ("timeStamp",">",prevMonth));
+      const prevMonthData = await getDocs(prevMonthQuery);
+      const lastMonthData = await getDocs(lastMonthQuery);
+     
+      setDiff(((counter - prevMonthData.docs.length) /counter) *100);
+      setAmount(counter);
+      
 
+    };
+    fetchData();
+  }, [amount]);
 
-const lastMonthDate = await getDocs(lastMonthQuery);
-const prevMonthDate = await getDocs(prevMonthQuery);
-
-setAmount(lastMonthDate.docs.length);
-
-};
-fatchData();
-
-},[])
    
 
   return (

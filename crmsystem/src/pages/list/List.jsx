@@ -1,15 +1,13 @@
 import "./list.scss"
 import Sidebar from "../../components/sidebar/Sidebar"
 import Navbar from "../../components/navbar/Navbar"
-import Datatable from "../../components/datatable/Datatable"
 import {Link} from "react-router-dom";
 import { DataGrid } from '@mui/x-data-grid';
-import { userColumns , userRows } from "../../datatablesource";
 import { useState } from "react";
 import { useEffect } from "react";
 import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { db } from "../../firebease";
-import { async } from "@firebase/util";
+
 
 
 /*
@@ -93,7 +91,10 @@ console.log(err)
         pageSize={9}
         rowsPerPageOptions={[9]}
         checkboxSelection
-      /></div>
+      />
+      
+      
+      </div>
 
 
 

@@ -11,7 +11,7 @@ const List=()=>{
 
   const rows= [
     {
-      id: 1143155,
+      id: "i5VAm1XaAg8NbIB2wD9f",
       Listing: "Acer Nitro 5",
       img:"https://istanbulapartmentsforsale.com/wp-content/uploads//2019/07/old-Istanbul-house-for-sale-1.jpeg",
       customer:"John Smith",
@@ -32,18 +32,21 @@ const List=()=>{
     },
     
   ];
+
+
+
   return(
 <TableContainer component={Paper} className="table">
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-          <TableCell className="tableCell">Tracking ID</TableCell>
-          <TableCell className="tablecell">Listing</TableCell>
-          <TableCell className="tableCell">Customer</TableCell>
-          <TableCell className="tableCell">Date</TableCell>
-          <TableCell className="tableCell">Amount</TableCell>
-          <TableCell className="tableCell">Payment Method</TableCell>
-          <TableCell className="tableCell">Status</TableCell>
+          <TableCell className="tableCell">cuatomer id</TableCell>
+          <TableCell className="tablecell">custoer name</TableCell>
+          <TableCell className="tableCell">customer phone</TableCell>
+          <TableCell className="tableCell">seller adress</TableCell>
+          <TableCell className="tableCell">seller name</TableCell>
+          <TableCell className="tableCell">seller Email</TableCell>
+          <TableCell className="tableCell">listing address</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -56,7 +59,6 @@ const List=()=>{
               
               <TableCell className="tableCell">
                   <div className="cellWrapper">
-                    <img src={row.img} alt="" className="image" />
                     {row.Listing}
                   </div>
               </TableCell>
