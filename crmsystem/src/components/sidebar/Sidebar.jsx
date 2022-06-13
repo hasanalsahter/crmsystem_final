@@ -54,10 +54,12 @@ function Sidebar() {
                 </li>
                 </Link>
 
+                <Link to="/contracts" style={{textDecoration:"none"}}>
                 <li>
                     <ReceiptIcon className="Icon"/>
                     <span>Contracts</span>
                 </li>
+                </Link>
 
                 <p className="title">SHORT CUTS</p>
 
@@ -71,10 +73,12 @@ function Sidebar() {
                     <span>Notifications</span>
                 </li>
 
+                <Link to="/staff" style={{textDecoration:"none"}}>
                 <li>
                     <BadgeIcon className="Icon"/>
                     <span>Staff</span>
                 </li>
+                </Link>
                 <p className="title">SERVICE</p>
                 <li>
                     <SettingsIcon className="Icon"/>
@@ -92,18 +96,7 @@ function Sidebar() {
                 
             </ul>
         </div>
-        <div className="bottom">
-
-        <div
-          className="colorOption"
-         
-        ></div>
-        <div
-          className="colorOption"
-         
-        ></div>
-
-        </div>
+      
         
     </div>
   )

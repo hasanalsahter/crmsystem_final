@@ -14,6 +14,7 @@ const StaffNew = ({inputs , title ,dataset}) => {
 
   const [file , setFile] = useState("");
   const [data , setData] = useState({}); 
+  const [per, setPerc] = useState(null);
 
   useEffect(()=>{
     const uploadFile = ()=>{
@@ -22,11 +23,13 @@ const StaffNew = ({inputs , title ,dataset}) => {
     const uploadTask = uploadBytesResumable(storageRef, file);
 
 
+
 uploadTask.on('state_changed', 
   (snapshot) => {
 
     const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
     console.log('Upload is ' + progress + '% done');
+    setPerc(progress);
     switch (snapshot.state) {
       case 'paused':
         console.log('Upload is paused');
@@ -125,7 +128,7 @@ const AddStaff = async(e) =>{
               <input id={input.id} type={input.type} placeholder={input.placeholder} onChange={Add_Staff_Info}/>
             </div>
             ))}
-            <button type="submit" >send</button>
+            <button disabled={per !== null && per < 100} type="submit" >send</button>
           </form>
         </div>
          </div>

@@ -85,6 +85,36 @@ export const Satffcolumns = [
 ];
 
 
+  
+
+export const contractscolums = [
+    { field: 'id', headerName: 'ID', width: 70 },
+    { field: 'customer_name', headerName: 'customer name', width: 230 },
+    { field: 'customer_phone', headerName: 'customer phone', width: 100 },
+    { field: 'customer_address', headerName: 'customer address', width: 100 },
+    { field: 'seller_name', headerName: 'seller name', width: 100 },
+    { field: 'seller_Email', headerName: 'seller Email', width: 100 },
+    { field: 'sold_price', headerName: 'sold price', width: 100 },
+    { field: 'listing_address', headerName: 'listing address', width: 100 },
+    { field: 'status', headerName: 'Status', width: 160,
+    renderCell:(params)=>{
+        return(
+            <div className={`CellwithStatus ${params.row.status}`}>
+            {params.row.status}
+            </div>
+        );
+    } },
+];
+
+
+
+
+
+
+
+
+
+
 
 
 

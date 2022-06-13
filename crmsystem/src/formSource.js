@@ -124,3 +124,62 @@ export const StaffInput=[
 
 
 ];
+
+
+
+
+
+export const contractsInputs=[
+
+  {
+      id:"customer_name",
+      label:"Customer name",
+      type:"text",
+      placeholder:"john_doe",
+   },
+   {
+    id:"customer_phone",
+    label:"Customer phone numebr",
+    type:"text",
+    placeholder:"+90 541 432 12 34",
+ },
+ {
+  id:"customer_address",
+  label:"customer address",
+  type:"text",
+  placeholder:"cum mah",
+},
+   {
+      id:"seller_name",
+      label:"seller name",
+      type:"text",
+      placeholder:"kamil koc",
+    },
+    {
+      id:"seller_Email",
+      label:"Email",
+      type:"text",
+      placeholder:"kamilkoc@forica.com",
+    },
+    {
+      id:"listing_address ",
+      label:"The sold listing address",
+      type:"text",
+      placeholder:"Cevval sk",
+    },
+    {
+      id:"sold_price",
+      label:"Price",
+      type:"text",
+      placeholder:"120,000$",
+    },
+    {
+      id:"special_conditions",
+      label:"special conditions",
+      type:"text",
+      placeholder:"more optional details and special conditions ",
+    },
+  
+
+
+];

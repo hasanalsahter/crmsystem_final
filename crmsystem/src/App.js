@@ -1,7 +1,7 @@
 import Home from "./pages/home/Home"
 import Login from "./pages/login/Login";
-import { productInputs, StaffInput, userInputs , } from "./formSource";
-import {userRows , userColumns , proColumns , proRows , Satffcolumns , StaffRows} from"./datatablesource"
+import { productInputs, StaffInput, userInputs ,contractsInputs } from "./formSource";
+import {userRows , userColumns , proColumns , proRows , Satffcolumns , contractscolums} from"./datatablesource"
 import {
   BrowserRouter,
   Routes,
@@ -13,6 +13,7 @@ import { useContext } from "react"
 import Single from "./pages/single/Single";
 import New from "./pages/new/New";
 import StaffNew from "./pages/new/Staffnew";
+import NewContract from "./pages/new/newContact";
 import List from "./pages/list/List";
 import Messages from "./pages/messages/messages";
 import Staff from "./pages/stuff/stuff";
@@ -51,9 +52,15 @@ const ReqireAuth = ({children}) =>{
         </Route>
 
         <Route path="listings"  >
-        <Route index element={<ReqireAuth><List   colums={proColumns} title="Product" bath="/listings/new"  viewbath="/listings/single" table_collection="listings"/></ReqireAuth>} />
+        <Route index element={<ReqireAuth><List   colums={proColumns} title="listings" bath="/listings/new"  viewbath="/listings/single" table_collection="listings"/></ReqireAuth>} />
         <Route path=":listingid" element={<ReqireAuth><Single   /></ReqireAuth>} />
-        <Route path="new" element={<ReqireAuth><New  inputs={productInputs} title="Add New product" dataset="listings" /></ReqireAuth>} />
+        <Route path="new" element={<ReqireAuth><New  inputs={productInputs} title="Add New listing" dataset="listings" /></ReqireAuth>} />
+        </Route>
+
+        <Route path="contracts"  >
+        <Route index element={<ReqireAuth><List   colums={contractscolums} title="Contracts" bath="/contracts/new"  viewbath="/contracts/single" table_collection="contracts"/></ReqireAuth>} />
+        <Route path=":listingid" element={<ReqireAuth><Single   /></ReqireAuth>} />
+        <Route path="new" element={<ReqireAuth><NewContract  inputs={contractsInputs} title="Add New Contract" dataset="contracts" /></ReqireAuth>} />
         </Route>
 
 
