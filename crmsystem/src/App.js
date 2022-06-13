@@ -63,6 +63,7 @@ const ReqireAuth = ({children}) =>{
         <Route path="new" element={<ReqireAuth><NewContract  inputs={contractsInputs} title="Add New Contract" dataset="contracts" /></ReqireAuth>} />
         </Route>
 
+       
 
          </Route>
     </Routes>
