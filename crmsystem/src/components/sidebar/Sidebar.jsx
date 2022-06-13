@@ -61,17 +61,10 @@ function Sidebar() {
                 </li>
                 </Link>
 
-                <p className="title">SHORT CUTS</p>
+               
 
-                <li>
-                    <QueryStatsIcon className="Icon"/>
-                    <span>Stats</span>
-                </li>
 
-                <li>
-                    <NotificationsIcon className="Icon"/>
-                    <span>Notifications</span>
-                </li>
+               
 
                 <Link to="/staff" style={{textDecoration:"none"}}>
                 <li>

@@ -98,6 +98,7 @@ export const StaffInput=[
       placeholder:"john_doe",
    },
    {
+    
       id:"Staff_Rol",
       label:"Rol",
       type:"text",
@@ -106,6 +107,7 @@ export const StaffInput=[
     {
       id:"Staff_Email",
       label:"Email",
+      
       type:"text",
       placeholder:"Florya",
     },
