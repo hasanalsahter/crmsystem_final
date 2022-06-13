@@ -8,6 +8,7 @@ import { useState } from "react";
 import {  ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { useEffect } from "react";
 import {  createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 
 const StaffNew = ({inputs , title ,dataset}) => {
@@ -15,6 +16,7 @@ const StaffNew = ({inputs , title ,dataset}) => {
   const [file , setFile] = useState("");
   const [data , setData] = useState({}); 
   const [per, setPerc] = useState(null);
+  const navigate = useNavigate()
 
   useEffect(()=>{
     const uploadFile = ()=>{
@@ -65,7 +67,7 @@ uploadTask.on('state_changed',
     const id =e.target.id;
     const value = e.target.value;
 
-    setData({...data , [id]:value});
+    setData({...data , [id]:value } );
   };
 
 
@@ -80,6 +82,7 @@ const AddStaff = async(e) =>{
       ...data,
       timestamp: serverTimestamp()
     });
+    navigate(-1)
   }catch(err){
     console.log(err);
   } 
@@ -128,7 +131,8 @@ const AddStaff = async(e) =>{
               <input id={input.id} type={input.type} placeholder={input.placeholder} onChange={Add_Staff_Info}/>
             </div>
             ))}
-            <button disabled={per !== null && per < 100} type="submit" >send</button>
+          
+            <button disabled={per !== null && per < 100}type="submit" >send</button>
           </form>
         </div>
          </div>

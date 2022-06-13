@@ -5,6 +5,11 @@ import Widget from "../../components/widget/Widget"
 import Featured from "../../components/featuered/Featured"
 import Chart from "../../components/chart/Chart";
 import Table from "../../components/table/Table";
+import {SettingsPane, SettingsPage, SettingsContent, SettingsMenu} from 'react-settings-pane'
+import {userRows , userColumns , proColumns , proRows , Satffcolumns , contractscolums} from"../../datatablesource"
+import Datatables from "../../components/datatable/Datatable"
+
+
 
 
 export default function Home() {
@@ -28,7 +33,8 @@ export default function Home() {
         </div>
         <div className="listContainer">
           <div className="listTitle">Latst Transactions</div>
-         <Table/>
+         <Datatables  colums={contractscolums} title="Contracts" bath="/contracts/new"  viewbath="/contracts/single" table_collection="contracts"/>
+         
         </div>
       </div>  
     </div>
