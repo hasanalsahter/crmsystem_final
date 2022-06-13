@@ -31,6 +31,7 @@ export const userInputs=[
    type:"datalist",
   
 },
+
     
 ];
 

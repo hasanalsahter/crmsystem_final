@@ -4,13 +4,14 @@ import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import MonetizationOnOutlinedIcon from "@mui/icons-material/MonetizationOnOutlined";
-
+import { useEffect, useState } from "react";
+import { collection , query , where , getDocs} from "firebase/firestore";
+import {  db } from "../../firebease";
 const Widget = ({ type }) => {
+  const [amount , setAmount] = useState(null)
+  const [diff , setDiff] = useState(null)
   let data;
 
-  //temporary
-  const amount = 500;
-  const diff = 20;
 
   switch (type) {
     case "user":
@@ -77,6 +78,27 @@ const Widget = ({ type }) => {
     default:
       break;
   }
+useEffect (() =>{
+const fatchData = async () =>{
+const today = new Date();
+const prevMonth =new Date (new Date().setMonth(today.getMonth() -2))
+const lastMonth =new Date (new Date().setMonth(today.getMonth() -1))
+
+
+const lastMonthQuery =query(collection(db , "customers") , where ("timeStamp","<=",today) , where ("timeStamp",">",lastMonth));
+const prevMonthQuery =query(collection(db , "customers") , where ("timeStamp","<=",lastMonth) , where ("timeStamp",">",prevMonth));
+
+
+const lastMonthDate = await getDocs(lastMonthQuery);
+const prevMonthDate = await getDocs(prevMonthQuery);
+
+setAmount(lastMonthDate.docs.length);
+
+};
+fatchData();
+
+},[])
+   
 
   return (
     <div className="widget">
