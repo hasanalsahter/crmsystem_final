@@ -31,7 +31,7 @@ export default List
 
 */
 
-function Datatables( {  colums , title ,bath , viewbath, table_collection} ) {
+function Datatables( {  colums  , viewbath, table_collection} ) {
   const [data , setData] = useState([]);
   useEffect(()=>{
     const fetchData = async ()=>{

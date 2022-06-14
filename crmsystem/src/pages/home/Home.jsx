@@ -32,8 +32,8 @@ export default function Home() {
 
         </div>
         <div className="listContainer">
-          <div className="listTitle">Latst Transactions</div>
-         <Datatables  colums={contractscolums} title="Contracts" bath="/contracts/new"  viewbath="/contracts/single" table_collection="contracts"/>
+          <div className="listTitle">Latst Contracts</div>
+         <Datatables  colums={contractscolums}   viewbath="/contracts/single" table_collection="contracts"/>
          
         </div>
       </div>  
