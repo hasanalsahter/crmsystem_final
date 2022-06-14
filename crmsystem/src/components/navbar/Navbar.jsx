@@ -6,6 +6,7 @@ import FullscreenExitOutlinedIcon from "@mui/icons-material/FullscreenExitOutlin
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import ChatBubbleOutlineOutlinedIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
 import ListOutlinedIcon from "@mui/icons-material/ListOutlined";
+import {Link} from "react-router-dom";
 
 function Navbar() {
   return (
@@ -31,6 +32,7 @@ function Navbar() {
           <div className="item">
             <ListOutlinedIcon className="icon" />
           </div>
+          <Link to="staff/single" style={{textDecoration:"none"}}>
           <div className="item">
             <img
               src="https://images.pexels.com/photos/941693/pexels-photo-941693.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
@@ -38,6 +40,7 @@ function Navbar() {
               className="avatar"
             />
           </div>
+          </Link>
         </div>
       </div>
 
