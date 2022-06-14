@@ -31,14 +31,16 @@ export default function Home() {
           <Chart title="Last 6 Months (Revenue)" aspect={2 / 1} />
 
         </div>
-        <div className="listContainer">
-          <div className="listTitle">Latst Contracts</div>
-         <Datatables  colums={contractscolums}   viewbath="/contracts/single" table_collection="contracts"/>
-         
-        </div>
+      
       </div>  
     </div>
   );
 };
-
+/*   <div className="listContainer">
+          <div className="listTitle">Latst Contracts</div>
+       <Datatables  colums={contractscolums}   viewbath="/contracts/single" table_collection="contracts"/>
+         
+        </div>
+        
+        */
 

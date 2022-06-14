@@ -17,6 +17,7 @@ import NewContract from "./pages/new/newContact";
 import List from "./pages/list/List";
 import Messages from "./pages/messages/messages";
 import Staff from "./pages/stuff/stuff";
+import Settings from "./pages/settings/Settings";
 function App() {
 
 
@@ -61,6 +62,12 @@ const ReqireAuth = ({children}) =>{
         <Route index element={<ReqireAuth><List   colums={contractscolums} title="Contracts" bath="/contracts/new"  viewbath="/contracts/single" table_collection="contracts"/></ReqireAuth>} />
         <Route path=":listingid" element={<ReqireAuth><Single   /></ReqireAuth>} />
         <Route path="new" element={<ReqireAuth><NewContract  inputs={contractsInputs} title="Add New Contract" dataset="contracts" /></ReqireAuth>} />
+        </Route>
+
+
+        <Route path="settings"  >
+        <Route index element={<ReqireAuth><Settings  /></ReqireAuth>} />
+
         </Route>
 
        

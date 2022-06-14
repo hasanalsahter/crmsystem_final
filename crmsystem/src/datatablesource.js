@@ -61,7 +61,7 @@ export const proColumns = [
 export const Satffcolumns = [
     { field: 'id', headerName: 'ID', width: 70 },
     {
-        field:"Staff_name", headerName: 'product', width:230, 
+        field:"Staff_name", headerName: 'Name', width:230, 
         renderCell: (params)=>{
             return(
         <div className="cellWithImg">

@@ -73,10 +73,12 @@ function Sidebar() {
                 </li>
                 </Link>
                 <p className="title">SERVICE</p>
+                <Link to="/settings" style={{textDecoration:"none"}}>
                 <li>
                     <SettingsIcon className="Icon"/>
                     <span>Settings</span>
                 </li>
+                </Link>
                 
                 <li>
                     
