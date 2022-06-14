@@ -5,7 +5,7 @@ import Widget from "../../components/widget/Widget"
 import Featured from "../../components/featuered/Featured"
 import Chart from "../../components/chart/Chart";
 import Table from "../../components/table/Table";
-import {SettingsPane, SettingsPage, SettingsContent, SettingsMenu} from 'react-settings-pane'
+
 import {userRows , userColumns , proColumns , proRows , Satffcolumns , contractscolums} from"../../datatablesource"
 import Datatables from "../../components/datatable/Datatable"
 
